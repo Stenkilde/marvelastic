@@ -12,7 +12,8 @@
 */
 Auth::routes();
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'GuestController@index');
+
 Route::get('/dashboard', 'HomeController@admin')->name('dashboard');
 
 Route::get('/read/{id}', [

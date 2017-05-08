@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 
-class HomeController extends Controller
+class GuestController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -13,17 +13,17 @@ class HomeController extends Controller
      * @return void
      */
     public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    {}
 
     /**
-     * Show the application dashboard.
+     * Show the guest view.
      *
      * @return \Illuminate\Http\Response
      */
-    public function admin()
+    public function index()
     {
-        return view('dashboard');
+        $posts = Post::all();
+
+        return view('home', ['posts' => $posts]);
     }
 }
