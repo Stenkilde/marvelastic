@@ -1,17 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">{{$post->title}}</div>
-
-                <div class="panel-body">
+    <div class="blog-container">
+        <header class="header">
+            <img src="{{ $post->photo }}" alt="">
+        </header>
+        <div class="read-me">
+            <div class="inner">
+                <div>
+                    <h2>{{ $post->title }}</h2>
+                </div>
+                <div class="the-body">
                     {!! $post->body !!}
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
